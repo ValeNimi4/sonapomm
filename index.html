@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SÕNAPOMM - ANIMEERI SÕNA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<link rel="icon" href="logo_must.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Relief&display=swap" rel="stylesheet">
+<style>
+@keyframes keerleb2d {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+    }
+body {text-align: center; color: white; background-color: black; font-family: "Comic Relief", system-ui; text-transform: uppercase;}
+button, input, div, select {outline: none; border-radius: 0px; border: solid 2px white; padding: 5px; font-family: "Comic Relief", system-ui;text-transform: uppercase;}
+button, input, select,div {color: white; background: black;}
+button:focus, button:hover, input:focus, select:focus {padding: 10px;}
+button:active {background-color:darkgray;}
+img {animation-name: keerleb2d; animation-duration: 2s;}
+</style>
+</head>
+<body>
+<script>
+function animeeri() {
+p = document.getElementById("link");
+p.innerHTML = "Siin on link:<br>";
+p.innerHTML += "https:/valeNimi4.github.io/sonapomm/sonapomm_ani.html?"+encodeURIComponent(document.getElementById("sona").value+"|||"+document.getElementsByTagName("select")[0].value+
+"|||"+document.getElementsByTagName("input")[1].value);}
+</script>
+<img src="logo_valge.png" width=200 height=25>
+<p>Tee sõnast kümne sekundiga animatsioon Sõnapommiga!</p>
+<p>Lihtsalt sisesta sõna ning saadki animatsiooni!</p>
+<p>Sõna:</p>
+<input id="sona" type="text" placeholder="Sõna">
+<p>Animatsioon:</p>
+<select id="valik">
+<option value="pole">Pole</option>
+<option value="labipaistvus">Läbipaistvuse muutumine</option>
+<option value="keerleb2d">2d Keerlemine</option>
+<option value="keerleb3d">3d Keerlemine</option>
+<option value="pong">Pong</option>
+<option value="suurvaike">2 korda suuremaks ning tagasi väikseks</option>
+</select>
+<br><p>Teksti suurus</p>
+<input value="30" type="number"><br><br>
+<button onclick="animeeri()">Animeeri!</button>
+<p>Kasutatud font: Google Comic Relief</p>
+<p id="link">Siia tuleb link.</p>
+</body>
+</html>
